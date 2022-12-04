@@ -275,6 +275,7 @@ class MainActivity : AppCompatActivity() {
 
         namesText.text = "${name1Input?.text.toString()} and ${name2Input?.text.toString()} Will Be"
 
+        // Animation
         render.setAnimation(Fade.In(backgroundChange))
         render.start()
         render.setAnimation(Fade.InUp(emoji1))
