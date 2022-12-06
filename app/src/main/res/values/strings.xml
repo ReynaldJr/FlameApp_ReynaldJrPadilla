@@ -1,3 +1,24 @@
 <resources>
+    <string name="popup_friendship">
+    <font size="30">F</font><font size="20">riends</font>
+    </string>
+
+    <string name="popup_lovers">
+    <font size="30">L</font><font size="20">overs</font>
+    </string>
+
+    <string name="popup_affectionate">
+    <font size="30">A</font><font size="20">ffectionate</font>
+    </string>
+
+    <string name="popup_married">
+    <font size="30">M</font><font size="20">arried</font>
+    </string>
+
+    <string name="popup_enemies">
+    <font size="30">E</font><font size="20">nemies</font>
+    </string>
+
     <string name="app_name">Flame</string>
+    <string name="got_it">Got It!</string>
 </resources>

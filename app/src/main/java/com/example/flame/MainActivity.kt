@@ -1,18 +1,22 @@
 package com.example.flame
 
+import android.app.Dialog
+import android.content.res.ColorStateList
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.text.Html
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
+import androidx.core.content.ContextCompat
 import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.popup.*
 import render.animations.*
 import render.animations.Attention.Shake
 
@@ -32,7 +36,28 @@ class MainActivity : AppCompatActivity() {
         name2Input = findViewById(R.id.name2)
 
         resetButton.isClickable = false
+
+        Handler().postDelayed({
+            displayPopup()
+        }, 800)
+
     }
+
+    private fun displayPopup() {
+        var popupScreen = Dialog(this)
+        popupScreen.setCancelable(false)
+
+        popupScreen.setContentView(R.layout.popup)
+        popupScreen.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        var okButton = popupScreen.findViewById<Button>(R.id.ok_button)
+        okButton.setOnClickListener {
+            popupScreen.dismiss()
+        }
+
+        popupScreen.show()
+    }
+
 
     fun calculateRelationship(view: View?) {
         bothNames.clear()
@@ -77,13 +102,8 @@ class MainActivity : AppCompatActivity() {
         resetButton.alpha = 1f
 
         // Disabling Inputs
-        name1Input!!.isFocusable = false
-        name1Input!!.isEnabled = false
-        name1Input!!.isCursorVisible = false
-
-        name2Input!!.isFocusable = false
-        name2Input!!.isEnabled = false
-        name2Input!!.isCursorVisible = false
+        disableInput(name1Input!!)
+        disableInput(name2Input!!)
 
         // Putting both names into lower case and a list of characters
         name1List = name1.lowercase().toCharArray()
@@ -155,13 +175,8 @@ class MainActivity : AppCompatActivity() {
         calculateButton.alpha = 1f
 
         // Enabling inputs
-        name1Input.isFocusableInTouchMode = true
-        name1Input.isEnabled = true
-        name1Input.isCursorVisible = true
-
-        name2Input.isFocusableInTouchMode = true
-        name2Input.isEnabled = true
-        name2Input.isCursorVisible = true
+        enableInput(name1Input!!)
+        enableInput(name2Input!!)
 
         // Clearing input
         name1Input.text?.clear()
@@ -273,7 +288,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        namesText.text = "${name1Input?.text.toString()} and ${name2Input?.text.toString()} Will Be"
+        namesText.text = "${name1Input?.text.toString()} and ${name2Input?.text.toString()} will be"
 
         // Animation
         render.setAnimation(Fade.In(backgroundChange))
@@ -286,6 +301,23 @@ class MainActivity : AppCompatActivity() {
         render.start()
         render.setAnimation(Zoom.In(resultText))
         render.start()
+    }
+
+    private fun disableInput(editText: EditText) {
+        editText!!.isFocusable = false
+        editText!!.isEnabled = false
+        editText!!.isCursorVisible = false
+        editText!!.setBackgroundResource(R.drawable.rounded_edit_text_disabled)
+        editText!!.setTextColor(Color.parseColor("#b0b0b0"))
+
+    }
+
+    private fun enableInput(editText: EditText) {
+        editText!!.isFocusableInTouchMode = true
+        editText!!.isEnabled = true
+        editText!!.isCursorVisible = true
+        editText!!.setBackgroundResource(R.drawable.rounded_edit_text)
+        editText!!.setTextColor(Color.BLACK)
     }
 }
 
