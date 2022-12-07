@@ -1,7 +1,6 @@
 package com.example.flame
 
 import android.app.Dialog
-import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
@@ -11,12 +10,10 @@ import android.text.Html
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.*
-import androidx.core.content.ContextCompat
 import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.popup.*
 import render.animations.*
 import render.animations.Attention.Shake
 
@@ -41,6 +38,10 @@ class MainActivity : AppCompatActivity() {
             displayPopup()
         }, 800)
 
+        info_button.setOnClickListener {
+            info_button.startAnimation(AnimationUtils.loadAnimation(this, R.anim.button_click))
+            displayPopup()
+        }
     }
 
     private fun displayPopup() {

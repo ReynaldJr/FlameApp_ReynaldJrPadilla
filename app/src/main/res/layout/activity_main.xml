@@ -22,6 +22,19 @@
         app:srcCompat="@drawable/main_bg_final" />
 
     <ImageView
+        android:id="@+id/info_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/show_a_pop_up_information"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundChange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backgroundChange"
+        app:layout_constraintVertical_bias="0.022"
+        app:srcCompat="@drawable/mdi_question_mark_circle" />
+
+    <ImageView
         android:id="@+id/imageView4"
         android:layout_width="376dp"
         android:layout_height="252dp"

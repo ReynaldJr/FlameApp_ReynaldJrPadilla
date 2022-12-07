@@ -21,4 +21,5 @@
 
     <string name="app_name">Flame</string>
     <string name="got_it">Got It!</string>
+    <string name="show_a_pop_up_information">Show pop up information</string>
 </resources>
