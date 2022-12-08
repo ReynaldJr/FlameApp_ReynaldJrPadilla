@@ -22,4 +22,21 @@
     <string name="app_name">Flame</string>
     <string name="got_it">Got It!</string>
     <string name="show_a_pop_up_information">Show pop up information</string>
+    <string name="plus_sign">+</string>
+    <string name="determine_your_future_relationship_with_flame">Determine your future relationship with FLAME</string>
+    <string name="calculate">Calculate</string>
+    <string name="image_view_to_change_background">Image view to change background</string>
+    <string name="reset">Reset</string>
+    <string name="name_1">Name 1</string>
+    <string name="name_2">Name 2</string>
+    <string name="container_to_hold_info">Container to hold info</string>
+    <string name="flame">FLAME</string>
+    <string name="right_circle">Right circle</string>
+    <string name="left_circle">Left circle</string>
+    <string name="left_emoji">Left emoji</string>
+    <string name="right_emoji">Right emoji</string>
+    <string name="simply_input_your_name_and_the_name_of_the_person_you_are_interested_in_and_you_ll_find_out_your_flame_together">Simply input your name and the name of the person you are interested in, and you’ll find out your FLAME together!</string>
+    <string name="determine_your_future_relationship_with_others_using_flame">Determine your future relationship with others using FLAME!</string>
+    <string name="pop_up_container">Pop up container</string>
+    <string name="fire_logo">Fire logo</string>
 </resources>
