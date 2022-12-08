@@ -34,16 +34,19 @@ class MainActivity : AppCompatActivity() {
 
         resetButton.isClickable = false
 
+        // Display entry pop up
         Handler().postDelayed({
             displayPopup()
         }, 800)
 
+        // Display pop up on info button
         info_button.setOnClickListener {
             info_button.startAnimation(AnimationUtils.loadAnimation(this, R.anim.button_click))
             displayPopup()
         }
     }
 
+    // Function to display pop up
     private fun displayPopup() {
         var popupScreen = Dialog(this)
         popupScreen.setCancelable(false)
@@ -60,6 +63,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    // Calculating
     fun calculateRelationship(view: View?) {
         bothNames.clear()
 
@@ -123,6 +127,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+        // Adds both names to the list without spaces
         for (item in name1List) {
             if (item != ' ') {
                 bothNames.add(item)
@@ -142,6 +147,7 @@ class MainActivity : AppCompatActivity() {
         var splitFlame: String
         var finalFlameRelationship = 0.toChar()
 
+        // Calculating the FLAME relationship
         if(bothNamesLength > 0) {
             while (flameString.length != 1) {
                 Log.i("FLAME OUTPUT", flameString.toString())
@@ -163,6 +169,7 @@ class MainActivity : AppCompatActivity() {
         relationshipResult(finalFlameRelationship)
     }
 
+    // Resets the result of inputs on reset button
     fun resetResults(view: View?) {
         val name1Input = findViewById<TextInputEditText>(R.id.name1)
         val name2Input = findViewById<TextInputEditText>(R.id.name2)
@@ -208,6 +215,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    // Function to display the result of relationships
     private fun relationshipResult(relationshipResult: Char) {
 
         when(relationshipResult) {
@@ -304,6 +312,7 @@ class MainActivity : AppCompatActivity() {
         render.start()
     }
 
+    // Function to disable both inputs
     private fun disableInput(editText: EditText) {
         editText!!.isFocusable = false
         editText!!.isEnabled = false
@@ -313,6 +322,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    // Function to enable both inputs
     private fun enableInput(editText: EditText) {
         editText!!.isFocusableInTouchMode = true
         editText!!.isEnabled = true
