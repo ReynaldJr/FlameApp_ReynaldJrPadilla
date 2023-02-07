@@ -1,7 +1,9 @@
+<img src="https://user-images.githubusercontent.com/91404670/217307136-8ff5414d-cc52-4f58-aade-8fede7c7ef24.png" width="250" height="250" />
+
 # FLAME Calculator
 FLAME is a fun calculator game that predicts your relationship with your buddies in the future. FLAME stands for Friends, Lovers, Affectionate, Married, and Enemies. Using both of your names, you may calculate your future relationship and pinpoint it on one of the letters in the FLAME acronym. This app brings the classic game of FLAME, which is commonly played with paper and pencil, to your phone.
 
-<p align = "center">
+<p align = "left">
   <img src="https://user-images.githubusercontent.com/91404670/217304532-6c7bcf9d-f8a8-4538-a61b-c7d4193d58c1.png" width="250" height="500" />
   <img src="https://user-images.githubusercontent.com/91404670/217304540-02173a6e-f5b6-49cb-a575-580a31a75d02.png" width="250" height="500" />
   <img src="https://user-images.githubusercontent.com/91404670/217304548-31ed191e-dd81-47e0-8d5e-379a36f6924e.png" width="250" height="500" />
